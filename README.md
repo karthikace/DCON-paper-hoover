@@ -43,12 +43,15 @@ playwright install chromium
 ## FAQ
 
 **Q: Is this legal?**
+
 A: You're downloading papers you have legitimate access to. You're just... faster now.
 
 **Q: Why is it not fully headless?**
+
 A: CAPTCHA. Humanity's last stand against automation, and apparently it's working.
 
 **Q: Will you read all these papers?**
+
 A: No. But they'll look great in a folder.
 
 ## License
