@@ -4,7 +4,7 @@
 
 ## What is this?
 
-A semi-automated Playwright script that logs into the DCON26 conference portal, browses every session, and vacuums up all the handout PDFs into tidy little folders - so you can pretend you'll read them later.
+A semi-automated Playwright script that logs into the [DCON26 conference portal](https://www.designcon.com/en/home.html), browses every session, and vacuums up all the handout PDFs into tidy little folders - so you can pretend you'll read them later.
 
 ## The Workflow
 
