@@ -36,9 +36,12 @@ playwright install chromium
    python download_script.py
    ```
 3. Solve the CAPTCHA when prompted. Yes, you - the robot couldn't do it. The irony is not lost on us.
-4. Scroll to the bottom of the session gallery to load all results, then press Enter.
-5. Watch the script middle click its way through every session like a caffeinated grad student at 2 AM.
-6. Find your PDFs in the `Conference_Papers/` directory, organized by session title.
+   
+5. **Scroll to the bottom of the session gallery to load all results, then press Enter.**
+   
+7. Watch the script middle click its way through every session like a caffeinated grad student at 2 AM.
+   
+9. Find your PDFs in the `Conference_Papers/` directory, organized by session title.
 
 ## FAQ
 
