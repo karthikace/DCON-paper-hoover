@@ -1,62 +1,44 @@
-# 📄 DCON26 Paper Hoover
+# DCON26 Paper Hoover
 
-> Because downloading 300 conference PDFs one-by-one is a punishment no engineer deserves.
+## Overview
+This utility automates the retrieval of PDF handouts from the DesignConCON conference portal. It facilitates the batch download of session materials to replace manual navigation and individual downloads. Tested for DesignCon 2026.
 
-## What is this?
+---
 
-A semi-automated Playwright script that logs into the [DCON26 conference portal](https://www.designcon.com/en/home.html), browses every session, and vacuums up all the handout PDFs into tidy little folders - so you can pretend you'll read them later.
+## Prerequisites
 
-## The Workflow
+* **Python 3.x**
+* **Playwright Library**:
+    ```bash
+    pip install playwright
+    playwright install chromium
+    ```
+* **Credentials**: A `credentials.txt` file must be present in the root directory.
+    * **Line 1**: Account email
+    * **Line 2**: Account password
 
-```
-You ➜ Add credentials ➜ Solve CAPTCHA like a good human ➜ Scroll to the bottom ➜ Go make coffee ☕
-Script ➜ Opens 9000 tabs ➜ Downloads everything ➜ Cleans up empty folders ➜ Feels nothing
-```
+---
 
-## Requirements
+## Operational Workflow
 
-- Python 3.x
-- A soul willing to solve one (1) CAPTCHA
-- Functioning scroll wheel finger
+1. **Authentication**: The script initializes a browser instance and navigates to the login portal.
+2. **Manual Verification**: The user must manually complete the CAPTCHA and press **Enter** in the terminal to proceed.
+3. **Data Loading**: The user must scroll to the bottom of the Session Gallery page to ensure all dynamic content is loaded.
+4. **Extraction**: The script iterates through identified session links, navigates to the "Resources" tab, and downloads available PDFs.
+5. **Organization**: Files are saved into the `Conference_Papers/` directory, sub-divided by session title. Empty directories are purged upon completion.
 
-```bash
-pip install playwright
-playwright install chromium
-```
+---
 
-## Usage
+## Technical Specifications
 
-1. Create a `credentials.txt` file in the project root:
-   ```
-   your.email@example.com
-   your.password
-   ```
-2. Run it:
-   ```bash
-   python download_script.py
-   ```
-3. Solve the CAPTCHA when prompted. Yes, you - the robot couldn't do it. The irony is not lost on us.
-   
-5. **Scroll to the bottom of the session gallery to load all results, then press Enter.**
-   
-7. Watch the script middle click its way through every session like a caffeinated grad student at 2 AM.
-   
-9. Find your PDFs in the `Conference_Papers/` directory, organized by session title.
+* **Library**: Playwright (Synchronous)
+* **Browser**: Chromium (Non-headless for authentication)
+* **File Structure**:
+    * `download_script.py`: Main execution logic.
+    * `credentials.txt`: User authentication data.
+    * `Conference_Papers/`: Output destination.
 
-## FAQ
-
-**Q: Is this legal?**
-
-A: You're downloading papers you have legitimate access to. You're just... faster now.
-
-**Q: Why is it not fully headless?**
-
-A: CAPTCHA. Humanity's last stand against automation, and apparently it's working.
-
-**Q: Will you read all these papers?**
-
-A: No. But they'll look great in a folder.
+---
 
 ## License
-
-MIT - do whatever you want, just don't mass-email the authors asking for TL;DRs.
+MIT License.
